@@ -1,4 +1,3 @@
-"use client";
 import { useState } from "react";
 
 const questions = [
@@ -80,17 +79,13 @@ Write a personalized 90-day protocol with these exact sections:
 Keep the tone warm, direct, and expert — like a knowledgeable friend who has been through this. No fluff. No disclaimers. Real actionable guidance. Format with clear headers using **bold** for section titles.`;
 
     try {
-      const response = await fetch("https://api.anthropic.com/v1/messages", {
+      const response = await fetch("/api/protocol", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          model: "claude-sonnet-4-20250514",
-          max_tokens: 1000,
-          messages: [{ role: "user", content: prompt }],
-        }),
+        body: JSON.stringify({ answers: data }),
       });
       const result = await response.json();
-      const text = result.content?.map((b) => b.text || "").join("") || "";
+      const text = result.protocol || "";
       setProtocol(text);
       setStep(8);
     } catch (e) {

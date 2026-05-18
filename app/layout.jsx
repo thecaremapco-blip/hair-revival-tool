@@ -1,3 +1,5 @@
+import './globals.css'
+
 export const metadata = {
   title: 'Hair Revival Protocol Builder',
   description: 'Get your personalized 90-day hair recovery protocol',

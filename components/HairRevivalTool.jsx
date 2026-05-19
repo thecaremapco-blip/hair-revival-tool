@@ -34,7 +34,7 @@ const questions = [
   },
 ];
 
-const ETSY_LINK = "https://www.etsy.com";
+const ETSY_LINK = "https://etsy.me/3POSLxO";
 
 export default function HairRevivalTool() {
   const [step, setStep] = useState(0); // 0 = intro, 1-6 = questions, 7 = loading, 8 = results
